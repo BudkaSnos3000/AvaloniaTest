@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaTest.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaTest.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+	  
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<Grid Background="White">
+		<Button Height="100" Width="100" >
+			<Button.Template>
+				<ControlTemplate>
+					<Grid Name="grid">
+						<!-- Ваше содержимое Grid -->
+					</Grid>
+				</ControlTemplate>
+			</Button.Template>
+
+			<Button.Styles>
+				<Style Selector="Button Grid#grid">
+					<Setter Property="Background" Value="Red" />
+				</Style>
+				<Style Selector="Button:pointerover Grid#grid">
+					<Setter Property="Background" Value="Yellow" />
+				</Style>
+				<Style Selector="Button:pressed Grid#grid">
+					<Setter Property="Background" Value="Green" />
+				</Style>
+			</Button.Styles>
+		</Button>
+
+		<TextBox x:Name="www" Focusable="True" PasswordChar="" Height="50" Watermark="100" Background="White" VerticalAlignment="Top">
+
+		</TextBox>
+
+		
+		
+		<Button HorizontalAlignment="Right" Height="100" Width="100" Classes="h2">
+			
+		</Button>
+	</Grid>
+</UserControl>
